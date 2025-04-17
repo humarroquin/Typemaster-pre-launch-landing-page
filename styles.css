@@ -23,6 +23,14 @@
   src: url("./fonts/barlow-v12-latin-700.woff2") format("woff2");
 }
 
+@font-face {
+  font-display: swap;
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 900;
+  src: url("./fonts/barlow-v12-latin-900.woff2") format("woff2");
+}
+
 /* CSS RESET — Josh Comeau */
 *,
 *::before,
@@ -83,19 +91,24 @@ h6 {
   --fw-regular: 400;
   --fw-semi-bold: 600;
   --fw-bold: 700;
+  --fw-extra-bold: 900;
 
   /* fixed font sizes */
   --fs-button: 1rem;
 
   /* spacing */
-  --size-100: 1.188rem; /* 19px */
-  --size-200: 1.5rem; /* 24px */
-  --size-300: 2.625rem; /* 42px */
-  --size-350: 3rem; /* 48px */
-  --size-500: 4rem; /* 64px */
-  --size-600: 4.5rem; /* 72px */
-  --size-700: 4.5rem; /* 72px */
-  --size-800: 4.5rem; /* 72px */
+  --size-100: 1.5rem; /* 24px */
+  --size-200: 1.6875rem; /* 27px */
+  --size-300: 1.875rem; /* 30px */
+  --size-325: 2rem; /* 32px */
+  --size-350: 2.5rem; /* 40px */
+  --size-500: 3rem; /* 48px */
+  --size-600: 3.4375rem; /* 55px */
+  --size-700: 5.1875rem; /* 83px */
+  --size-800: 10.5rem; /* 168px */
+
+  /* utility */
+  --border-radius-image: 1.25rem;
 }
 
 /* Utility classes */
@@ -115,8 +128,9 @@ h6 {
 .tertiary-heading {
   font-family: var(--ff-headings);
   font-weight: var(--fw-extra-bold);
-  line-height: 1.2;
-  color: var(--clr-blue);
+  line-height: 1;
+  color: var(--clr-dark-blue);
+  text-transform: uppercase;
 }
 .primary-heading {
   font-size: 3rem;
@@ -139,7 +153,8 @@ h6 {
   padding: 1em 1.625em;
   border-radius: 0.5rem;
   background-color: var(--clr-bright-orange);
-  font-weight: var(--fw-extra-bold);
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-bold);
   font-size: var(--fs-button);
   text-transform: uppercase;
   color: var(--clr-white);
@@ -154,16 +169,12 @@ h6 {
   color: var(--clr-dark-blue);
 }
 .button--secondary:is(:hover, :active) {
-  background-color: var(--gray);
-  color: var(--clr-dark-blue);
+  background-color: var(--clr-dark-blue);
+  color: var(--gray);
 }
 
-.container {
-  --max-width: 75rem;
-  --padding: 1rem;
-
-  width: min(var(--max-width), 100% - (var(--padding) * 2));
-  margin-inline: auto;
+.flex {
+  display: flex;
 }
 
 .grid-2cols,
@@ -182,6 +193,20 @@ h6 {
   gap: 30px;
 }
 
+@media (max-width: 46.875em) {
+  .grid-2cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+.container {
+  --max-width: 1110px;
+  --padding: 1rem;
+
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  margin-inline: auto;
+}
+
 /* PAGE STYLES */
 
 /* general styles */
@@ -195,4 +220,56 @@ body {
   font-family: var(--ff-body);
   font-weight: var(--fw-regular);
   color: var(--clr-saturated-blue);
+}
+
+.image {
+  /* height: 100%; */
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius-image);
+}
+
+/* header */
+.header {
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--size-600);
+}
+
+/* hero */
+.hero {
+  background-image: url(/assets/shared/pattern-square.svg);
+  background-repeat: no-repeat;
+  background-position: calc(100% + 10rem) top;
+}
+.hero__wrapper {
+  margin-block: var(--size-700) var(--size-300);
+  gap: 7.8125rem;
+}
+.hero__content {
+  align-self: center;
+}
+.hero__heading {
+  margin-bottom: var(--size-100);
+}
+.hero__description {
+  margin-bottom: var(--size-350);
+}
+
+@media (max-width: 46.875em) {
+  .hero {
+    background-image: none;
+  }
+  .hero__heading,
+  .hero__description {
+    margin-bottom: var(--size-325);
+  }
+  .hero__wrapper {
+    margin-block: var(--size-700) var(--size-300);
+    gap: 4rem;
+  }
+  .hero__wrapper .container {
+    width: 100%;
+    padding-left: 2rem;
+  }
 }

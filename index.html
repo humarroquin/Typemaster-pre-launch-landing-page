@@ -10,21 +10,21 @@
       sizes="32x32"
       href="./assets/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Frontend Mentor | Typemaster pre-launch landing page</title>
   </head>
   <body>
-    <header class="container">
+    <header class="header | container flex">
       <img src="/assets/shared/logo.svg" alt="Typemaster" />
-      <button class="button">Pre-order now</button>
+      <button class="button button--secondary">Pre-order now</button>
     </header>
 
     <main>
-      <section class="hero | container">
-        <div class="hero__wrapper | container">
+      <section class="hero">
+        <div class="hero__wrapper | container grid-2cols">
           <div class="hero__content">
-            <h1 class="primary-heading">Typemaster keyboard</h1>
-            <p>
+            <h1 class="hero__heading | primary-heading">Typemaster keyboard</h1>
+            <p class="hero__description">
               Improve your productivity and gaming without breaking the bank.
               Upgrade to a high quality mechanical typing experience.
             </p>
@@ -41,7 +41,11 @@
               media="(max-width: 768px)"
             />
 
-            <img src="./assets/desktop/image-keyboard.jpg" alt="" />
+            <img
+              src="./assets/desktop/image-keyboard.jpg"
+              alt=""
+              class="image"
+            />
           </picture>
         </div>
       </section>
@@ -59,7 +63,11 @@
                 media="(max-width: 768px)"
               />
 
-              <img src="./assets/desktop/image-phone-and-keyboard.jpg" alt="" />
+              <img
+                src="./assets/desktop/image-phone-and-keyboard.jpg"
+                alt=""
+                class="image"
+              />
             </picture>
           </div>
           <div>
@@ -74,7 +82,11 @@
                 media="(max-width: 768px)"
               />
 
-              <img src="./assets/desktop/image-glass-and-keyboard.jpg" alt="" />
+              <img
+                src="./assets/desktop/image-glass-and-keyboard.jpg"
+                alt=""
+                class="image"
+              />
             </picture>
           </div>
           <div>
