@@ -1,0 +1,198 @@
+/* font files */
+@font-face {
+  font-display: swap;
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/barlow-v12-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./fonts/barlow-v12-latin-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/barlow-v12-latin-700.woff2") format("woff2");
+}
+
+/* CSS RESET — Josh Comeau */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* VARIABLES */
+:root {
+  /* colors */
+  --clr-bright-orange: hsl(22, 89%, 52%);
+  --clr-orange: hsl(22, 100%, 69%);
+  --clr-dark-blue: hsl(220, 50%, 17%);
+  --clr-saturated-blue: hsl(221, 23%, 58%);
+  --gray: hsl(198, 28%, 93%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  /* font family */
+  --ff-headings: "Barlow", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  --ff-body: "Barlow", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+
+  /* font weights */
+  --fw-regular: 400;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+
+  /* fixed font sizes */
+  --fs-button: 1rem;
+
+  /* spacing */
+  --size-100: 1.188rem; /* 19px */
+  --size-200: 1.5rem; /* 24px */
+  --size-300: 2.625rem; /* 42px */
+  --size-350: 3rem; /* 48px */
+  --size-500: 4rem; /* 64px */
+  --size-600: 4.5rem; /* 72px */
+  --size-700: 4.5rem; /* 72px */
+  --size-800: 4.5rem; /* 72px */
+}
+
+/* Utility classes */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+.primary-heading,
+.secondary-heading,
+.tertiary-heading {
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-extra-bold);
+  line-height: 1.2;
+  color: var(--clr-blue);
+}
+.primary-heading {
+  font-size: 3rem;
+  font-size: clamp(
+    3rem,
+    2.1666666666666665rem + 1.7777777777777777vw,
+    3.5rem
+  ); /* 56px-48px */
+}
+.secondary-heading {
+  font-size: 2rem; /* 32px */
+}
+
+.tertiary-heading {
+  font-size: 1.5rem; /* 24px */
+}
+
+.button {
+  border: 0;
+  padding: 1em 1.625em;
+  border-radius: 0.5rem;
+  background-color: var(--clr-bright-orange);
+  font-weight: var(--fw-extra-bold);
+  font-size: var(--fs-button);
+  text-transform: uppercase;
+  color: var(--clr-white);
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+.button:is(:hover, :active) {
+  background-color: var(--clr-orange);
+}
+.button--secondary {
+  background-color: var(--gray);
+  color: var(--clr-dark-blue);
+}
+.button--secondary:is(:hover, :active) {
+  background-color: var(--gray);
+  color: var(--clr-dark-blue);
+}
+
+.container {
+  --max-width: 75rem;
+  --padding: 1rem;
+
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  margin-inline: auto;
+}
+
+.grid-2cols,
+.grid-3cols,
+.grid-4cols {
+  display: grid;
+}
+.grid-2cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-3cols {
+  grid-template-columns: 1fr 2fr 2fr;
+}
+.grid-4cols {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+/* PAGE STYLES */
+
+/* general styles */
+body {
+  /* css reset */
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  /* css reset */
+
+  font-size: 1rem;
+  font-family: var(--ff-body);
+  font-weight: var(--fw-regular);
+  color: var(--clr-saturated-blue);
+}
