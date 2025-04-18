@@ -15,7 +15,7 @@
   </head>
   <body>
     <header class="header | container flex">
-      <img src="/assets/shared/logo.svg" alt="Typemaster" />
+      <img src="./assets/shared/logo.svg" alt="Typemaster" />
       <button class="button button--secondary">Pre-order now</button>
     </header>
 
@@ -28,9 +28,12 @@
               Improve your productivity and gaming without breaking the bank.
               Upgrade to a high quality mechanical typing experience.
             </p>
-            <button class="button">Pre-order now</button>
+            <div class="hero__button-wrapper | flex">
+              <button class="hero__buton | button">Pre-order now</button>
+              <p class="hero__release-date">Release on 5/27</p>
+            </div>
           </div>
-          <picture>
+          <picture class="hero__image-wrapper | image-wrapper">
             <source
               srcset="./assets/mobile/image-keyboard.jpg"
               media="(max-width: 375px)"
@@ -50,9 +53,9 @@
         </div>
       </section>
       <section class="product-description">
-        <div class="product-description__wrapper | container">
+        <div class="product-description__wrapper | container grid-3cols">
           <div>
-            <picture>
+            <picture class="image-wrapper image-wrapper--orange">
               <source
                 srcset="./assets/mobile/image-phone-and-keyboard.jpg"
                 media="(max-width: 375px)"
@@ -66,12 +69,12 @@
               <img
                 src="./assets/desktop/image-phone-and-keyboard.jpg"
                 alt=""
-                class="image"
+                class="image image-blend-orange"
               />
             </picture>
           </div>
           <div>
-            <picture>
+            <picture class="image-wrapper">
               <source
                 srcset="./assets/mobile/image-glass-and-keyboard.jpg"
                 media="(max-width: 375px)"
@@ -99,9 +102,9 @@
           </div>
         </div>
       </section>
-      <section class="container">
-        <h2>Features</h2>
-        <ul>
+      <section class="features | container">
+        <h2 class="sr-only">Features</h2>
+        <ul class="features__list | grid-4cols">
           <li>
             <div class="logo-wrapper">
               <img src="./assets/shared/icon-light.svg" alt="" />
@@ -149,10 +152,8 @@
         </ul>
       </section>
     </main>
-    <footer class="container">
+    <footer class="footer | container">
       <p>Typemaster 2021 | All Rights Reserved</p>
     </footer>
-    <!--  
-  Release on 5/27
-  --></body>
+  </body>
 </html>
