@@ -150,6 +150,10 @@ h6 {
   font-size: 1.5rem; /* 24px */
 }
 
+.text-bold {
+  font-weight: var(--fw-bold);
+}
+
 /* buttons */
 .button {
   border: 0;
@@ -329,6 +333,7 @@ body {
 @media (max-width: 46.875em) {
   .product-description {
     background-image: none;
+    margin-bottom: var(--size-750);
   }
   .product-description__image2 {
     grid-column: 2 / -1;
@@ -339,6 +344,7 @@ body {
     padding-inline: 1rem;
     text-align: center;
     justify-self: center;
+    margin-top: 2.625rem;
   }
   .product-description__wrapper.container {
     width: 100%;
@@ -349,17 +355,34 @@ body {
 .features {
   margin-bottom: var(--size-750);
 }
-
 .features__list {
   list-style: none;
   padding: 0;
 }
-
 .logo-wrapper {
   background-color: var(--clr-bright-orange);
   width: fit-content;
   padding: 20px;
   border-radius: 1rem;
+  margin-bottom: var(--size-350);
+}
+.features__list-headings {
+  margin-bottom: var(--size-100);
+  max-width: 13ch;
+}
+
+@media (max-width: 46.875em) {
+  .features {
+    margin-bottom: var(--size-700);
+  }
+  .features__list {
+    gap: 4rem;
+    text-align: center;
+  }
+
+  .features__list li {
+    justify-items: center;
+  }
 }
 
 /* footer */
